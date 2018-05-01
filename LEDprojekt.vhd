@@ -83,12 +83,12 @@ process (CLK)
     end process;  
         
 
-process (clk_500)                                           -- nahoru dolu adresa
-    begin
+process (clk_500)                             
+begin
     
-        if rising_edge(clk_500) then
+        if rising_edge(clk_500) then 
           
-            if SW1='1'  then 
+            if SW1='1'  then                    -- zmena adresovani nahoru/dolu
                 adresa<= adresa+1;          
                       
                 else        
@@ -103,22 +103,20 @@ end process;
    
  process(SW0)
  begin 
-                
-                
-              
-        if  SW0='1' and BTN0='0' then 
+                         
+        if  SW0='1' and BTN0='0' then                       -- schody doleva
             R_led<=j;
             
         
-        elsif SW0='0'  and BTN1='1' and BTN0='0' then 
+        elsif SW0='0'  and BTN1='1' and BTN0='0' then       -- schody doprava
             R_led<=jj;
             
         
-        elsif BTN1='0' and SW0='1' then 
+        elsif BTN1='0' and SW0='1' then         -- Logo VUt
             R_led<=vut;
          
          
-         elsif BTN1='0' and SW0='0' and SW2='1' and SW3='1' and SW4='1' and SW5='1' and BTN0='1' then 
+         elsif BTN1='0' and SW0='0' and SW2='1' and SW3='1' and SW4='1' and SW5='1' and BTN0='1' then   --UREL vykresleni
             R_led<=L;
          
          elsif BTN1='0' and SW0='0' and SW2='1' and SW3='1' and SW4='1' and BTN0='1' then 
@@ -131,7 +129,7 @@ end process;
         elsif BTN1='0' and SW0='0' and SW2='1' and BTN0='1' then 
             R_led<=U;
    
-        elsif BTN1='0' and SW0='0' and BTN0='1' then 
+        elsif BTN1='0' and SW0='0' and BTN0='1' then        --- srdicko 
             R_led<=not heart;
              
         
@@ -145,44 +143,43 @@ end process;
  end process;
   
     with adresa  select                       
-               k<=  "00000000" when "000",
-                    "00000000" when "001",
-                    "00000000" when "010",
-                    "00000000" when "011",
-                    "00000000" when "100",
-                    "00000000" when "101",
-                    "00000000" when "110",
-                    "00000000" when others; 
+                 k<=    "00000000" when "000",
+                        "00000000" when "001",
+                        "00000000" when "010",
+                        "00000000" when "011",
+                        "00000000" when "100",
+                        "00000000" when "101",
+                        "00000000" when "110",
+                        "00000000" when others; 
                     
     with adresa  select                       
-                q<= "11111111" when "000",
-                    "11111111" when "001",
-                    "11111111" when "010",
-                    "11111111" when "011",
-                    "11111111" when "100",
-                    "11111111" when "101",
-                    "11111111" when "110",
-                    "11111111" when others; 
+                 q<=    "11111111" when "000",
+                        "11111111" when "001",
+                        "11111111" when "010",
+                        "11111111" when "011",
+                        "11111111" when "100",
+                        "11111111" when "101",
+                        "11111111" when "110",
+                        "11111111" when others; 
                 
     with adresa  select                       
-                j<= "01111111" when "000",
-                    "10111111" when "001",
-                    "11011111" when "010",
-                    "11101111" when "011",
-                    "11110111" when "100",
-                    "11111011" when "101",
-                    "11111101" when "110",
-                    "11111110" when others;              
-
+                j<=     "01111111" when "000",
+                        "10111111" when "001",
+                        "11011111" when "010",
+                        "11101111" when "011",
+                        "11110111" when "100",
+                        "11111011" when "101",
+                        "11111101" when "110",
+                        "11111110" when others;              
     with adresa  select                       
-                jj<= "11111110" when "000",
-                     "11111101" when "001",
-                     "11111011" when "010",
-                     "11110111" when "011",
-                     "11101111" when "100",
-                     "11011111" when "101",
-                     "10111111" when "110",
-                     "01111111" when others;     
+                 jj<=   "11111110" when "000",
+                        "11111101" when "001",
+                        "11111011" when "010",
+                        "11110111" when "011",
+                        "11101111" when "100",
+                        "11011111" when "101",
+                        "10111111" when "110",
+                        "01111111" when others;     
                      
     with adresa  select                       
                 vut<=   "00000000" when "000",
@@ -203,9 +200,7 @@ end process;
                         "01111111" when "101",
                         "00110110" when "110",
                         "00000000" when others;
-                        
-                        
-                        
+                                                                 
                         
      with adresa  select                       
                 U<=     "11111111" when "000",
@@ -215,9 +210,7 @@ end process;
                         "10111101" when "100",
                         "10111101" when "101",
                         "10111101" when "110",
-                        "11111111" when others;
-                        
-                        
+                        "11111111" when others,                                 
                         
                         
         with adresa  select                       
@@ -229,8 +222,7 @@ end process;
                         "10111101" when "101",
                         "11000001" when "110",
                         "11111111" when others;
-                        
-                        
+                                              
                         
          with adresa  select                       
                 E<=     "11111111" when "000",
@@ -241,8 +233,7 @@ end process;
                         "10000001" when "101",
                         "11111111" when "110",
                         "11111111" when others;
-                        
-                        
+                                               
             with adresa  select                       
                 L<=     "11111111" when "000",
                         "10000001" when "001",
@@ -256,7 +247,7 @@ end process;
        
    
 ADRESS<=adresa;   
-LEDKA <='0';
+
 
                 
 end Behavioral;
