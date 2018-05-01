@@ -10,10 +10,6 @@ entity top is
         SW3: in std_logic;
         SW4: in std_logic;
         SW5: in std_logic;
-        SW6: in std_logic;
-        SW7: in std_logic;
-        SW8: in std_logic;
-        SW9: in std_logic;
         BTN0: in std_logic;
         BTN1: in std_logic;
         LEDKA: out std_logic;
