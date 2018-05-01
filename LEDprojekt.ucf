@@ -22,8 +22,8 @@ NET SW0             LOC = P39;
 NET SW1             LOC = P124;
 NET SW2             LOC = P103;  //U              //switch v pravo na boardu
 NET SW3             LOC = P104; // R
-NET SW4     		LOC = P101;   //E
-NET SW5     		LOC = P102;  //L
+NET SW4     	      	LOC = P101;   //E
+NET SW5     	      	LOC = P102;  //L
 
 # Outputs
 # LEDs
@@ -32,16 +32,16 @@ NET SW5     		LOC = P102;  //L
 #  *   *  ...  *   H: turn on
 #  *   *  ...  *   L: turn off
 #  8   9  ... 15
-#NET LED_EXP<0>		LOC = P118;
-#NET LED_EXP<1>		LOC = P119;
-#NET LED_EXP<2>		LOC = P116;
-#NET LED_EXP<3>		LOC = P117;
-#NET LED_EXP<4>		LOC = P114;
-#NET LED_EXP<5>		LOC = P115;
-#NET LED_EXP<6>		LOC = P112;
-#NET LED_EXP<7>		LOC = P113;
-#NET LED_EXP<8>		LOC = P103;
-#NET LED_EXP<9>		LOC = P104;
+#NET LED_EXP<0>	 	LOC = P118;
+#NET LED_EXP<1>	 	LOC = P119;
+#NET LED_EXP<2> 		LOC = P116;
+#NET LED_EXP<3>	 	LOC = P117;
+#NET LED_EXP<4>	 	LOC = P114;
+#NET LED_EXP<5>	 	LOC = P115;
+#NET LED_EXP<6>		 LOC = P112;
+#NET LED_EXP<7>	 	LOC = P113;
+#NET LED_EXP<8>	 	LOC = P103;
+#NET LED_EXP<9>	 	LOC = P104;
 #NET LED_EXP<10>		LOC = P101;
 #NET LED_EXP<11>		LOC = P102;
 #NET LED_EXP<12>		LOC = P98;
