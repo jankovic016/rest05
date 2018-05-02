@@ -131,9 +131,8 @@ end process;
         
         elsif BTN0='1' then 
             R_led<=k;
-            
-            
-            
+                       
+           
         
         end if;
  end process;
